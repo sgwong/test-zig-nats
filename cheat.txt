@@ -1,0 +1,15 @@
+zig translate-c -IC:\Project\zig\vcpkg\installed\x64-windows\include -LC:\Project\zig\vcpkg\installed\x64-windows\bin -lnats,-lc js-pub.c
+
+zig build -Dtarget=x86_64-windows-gnu -Doptimize=Debug
+
+c:\Users\sgwon\.vscode\extensions\vadimcn.vscode-lldb-1.9.1\adapter\codelldb.exe
+
+
+lldb zig-nats.exe
+add-dsym zig-nats.pdb
+image lookup -n main
+l main
+b main
+r
+b main.zig:22
+c
